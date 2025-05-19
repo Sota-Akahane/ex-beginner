@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <form
+      action="exam05-result.html"
+      th:action="@{/exam05/search}"
+      method="post"
+    >
+      <label for="keyWord">名前：</label
+      ><input type="text" name="keyWord" id="keyWord" /><br />
+      <button>検索</button>
+    </form>
+  </body>
+</html>
