@@ -5,7 +5,11 @@
     <title>Title</title>
   </head>
   <body>
-    <form action="exam01-result.html" th:action="@{/exam01}" method="post">
+    <form
+      action="exam01-result.html"
+      th:action="@{/exam01/input}"
+      method="post"
+    >
       <label for="name">名前：</label
       ><input type="text" name="name" id="name" /><br />
       <button>送信</button>
