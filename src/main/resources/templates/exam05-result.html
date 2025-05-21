@@ -2,10 +2,10 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>Insert title here</title>
   </head>
   <body>
-    検索結果<br /><br />
+    <h2>検索結果</h2><br />
     <div th:each="member : ${memberList}">
       <span th:text="${member.name}">name</span>
     </div>
