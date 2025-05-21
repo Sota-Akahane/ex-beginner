@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="exam06.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="item-list">
+        <h3>商品一覧</h3>
+        <div th:each="item : ${application.itemMap}">
+          <form
+            action="item-and-cart.html"
+            th:action="@{/exam06/inCart}"
+            method="post"
+          >
+            <span th:text="${item.value.name}">name</span>　<span
+              th:text="${#numbers.formatInteger(item.value.price, 0, 'COMMA')}"
+              >price</span
+            >円　
+            <button name="itemNumber" th:value="${item.key}">カートへ</button
+            ><br />
+          </form>
+        </div>
+      </div>
+      <div class="cart">
+        <h3>ショッピングカート</h3>
+        <div th:each="item,status : ${session.cartItemList}">
+          <form
+            action="item-and-cart.html"
+            th:action="@{/exam06/delete}"
+            method="post"
+          >
+            <span th:text="${item.name}">name</span>　<span
+              th:text="${#numbers.formatInteger(item.price, 0, 'COMMA')}"
+              >price</span
+            >円　<button name="index" th:value="${status.index}">削除</button>
+          </form>
+        </div>
+        <br />
+        合計金額：<span
+          th:text="${#numbers.formatInteger(totalPrice, 0, 'COMMA')}"
+          >totalPrice</span
+        >円
+      </div>
+    </div>
+  </body>
+</html>

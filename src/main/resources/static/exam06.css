@@ -1,0 +1,13 @@
+div.container {
+  display: flex;
+}
+
+div.item-list {
+  background-color: aqua;
+  width: 50%;
+}
+
+div.cart {
+  background-color: violet;
+  width: 50%;
+}
